@@ -5,23 +5,33 @@
     <title>列表页</title>
 </head>
 <body>
-    <h1>列表页</h1>
-    {% if booklist %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <div class="first_styles" style="margin:0 auto;width: 700px">
+        <h1>列表页</h1>
+        {% if booklist %}
         <ul>
 
             {% for book in booklist %}
                 {# <li><a href="/booktest/detail/{{book.id}}">{{book.btitle}}</a></li> #}
-                <li><a href="{% url 'booktest:detail' book.id %} ">{{book.btitle}}<a href="{% url 'booktest:delebook' book.id %}">删除</a></li>
+                <li><a href="{% url 'booktest:detail' book.id %} ">{{book.btitle}}<a href="{% url 'booktest:delebook' book.id %}">   删除</a><a href="{% url 'booktest:updatebook' book.id%}">   更新书籍</a></a>
+                </li>
+
             {% empty %}
                 没有书籍信息
             {% endfor %}
         </ul>
-    {% else %}
+        <a href="{% url 'booktest:addbook' %}" style="margin:0 auto;">添加书籍</a><br>
+
+        {% else %}
         没有收到书籍信息
-    {% endif %}
-    <br>
-    {# <a href="/booktest/index/">返回首页</a> #}
-    <a href="{% url 'booktest:index' %}">返回首页</a>
+        {% endif %}
+        <br>
+        {# <a href="/booktest/index/">返回首页</a> #}
+        <a href="{% url 'booktest:index' %}">返回首页</a>
+
+    </div>
+
 
 </body>
 </html>

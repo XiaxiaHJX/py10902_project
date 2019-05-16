@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <div class="first_styles" style="margin:0 auto;width: 700px">
+        <form  method="post" action="#">
+            姓名： <input type="text" value="{{ book.btitle }}" name="name">
+            时间: <input type="text" value="{{ book.pub_date|date:'Y-m-d H:i:s' }}" name="date">
+            <input type="submit" value="提交">
+        </form>
+
+    </div>
+
+</body>
+</html>
