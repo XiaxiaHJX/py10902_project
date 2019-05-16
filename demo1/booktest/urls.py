@@ -7,3 +7,10 @@ urlpatterns=[
     url(r'^detail/(\d+)/$',views.detail)
 
 ]
+
+# urlpatterns=[
+#     url('^index/$',views.index),
+#     url('^list/$',views.list),
+#     url(r'^detail/(\d+)/$',views.detail)
+#
+# ]
